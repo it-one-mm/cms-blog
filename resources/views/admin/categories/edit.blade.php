@@ -9,6 +9,9 @@
 
     <div class="row">
         <div class="col-6">
+
+            @include('messages.errors')
+
             <form action="{{ action('Admin\CategoriesController@update', $category->id) }}" method="post">
                 @csrf
                 @method('patch')
@@ -16,7 +19,7 @@
                     <label for="name">Name</label>
                     <input type="text" name="name" class="form-control" id="name" placeholder="Category Name..." value="{{ $category->name }}">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Update Category</button>
             </form>
 
         </div>
